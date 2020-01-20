@@ -1,5 +1,5 @@
 function makeplot() {
-    Plotly.d3.csv("https://raw.githubusercontent.com/jameschou365/LottoApp/master/bc49_draw_times_nb.csv", function(data){ processData(data) } );
+    Plotly.d3.csv("https://raw.githubusercontent.com/jameschou365/LottoApp/master/data/bc49_draw_times_nb.csv", function(data){ processData(data) } );
 
 };
 
