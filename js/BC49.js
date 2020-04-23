@@ -1,5 +1,5 @@
 function makeplot() {
-    Plotly.d3.csv("https://raw.githubusercontent.com/jameschou365/LottoApp/master/data/bc49_draw_times_nb.csv", function(data){ processData(data) } );
+    Plotly.d3.csv("https://raw.githubusercontent.com/jameschou365/LottoApp/master/data/bc49_stars_match_merge.csv", function(data){ processData(data) } );
 
 };
 
@@ -11,7 +11,7 @@ function processData(allRows) {
     for (var i=0; i<allRows.length; i++) {
         row = allRows[i];
         x.push( row['DrawDate'] );
-        y.push( row['DrawTimes'] );
+        y.push( row['S6'] );
     }
     console.log( 'X',x, 'Y',y, 'SD',standard_deviation );
     makePlotly( x, y, standard_deviation );
