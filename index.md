@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang=''>
+<head>
+   <meta charset='utf-8'>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="css/styles.css">
+   <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+   <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+   <title>Lotto Maker</title>
+</head>
+
+<body>
+<div id='cssmenu'>
+<ul>
+   <li class='active'><a href='#'><span>Home</span></a></li>
+   <li class='has-sub'><a href='#'><span>Counties</span></a>
+      <ul>
+         <li class='has-sub'><a href='#'><span>Canada</span></a>
+            <ul>
+               <li><a href='649.html'><span>649</span></a></li>
+               <li><a href='BC49.html'><span>BC49</span></a></li>
+               <li><a href='LottoMax.html'><span>LottoMax</span></a></li>
+            </ul>
+         </li>
+         <li class='has-sub'><a href='#'><span>USA</span></a>
+            <ul>
+               <li><a href='Hit5.html'><span>Hit 5</span></a></li>
+               <li><a href='PowerBall.html'><span>PowerBall</span></a></li>
+            </ul>
+         </li>
+      </ul>
+   </li>
+   <li><a href='#'><span>About</span></a></li>
+   <li class='last'><a href='#'><span>Contact</span></a></li>
+</ul>
+</div>
+
+<div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
+<p><strong>Source:</strong> https://plot.ly/javascript/gapminder-example/</p>
+</body>
+
+<script src="js/AddSlider.js"></script>
+</html>
