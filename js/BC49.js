@@ -4,20 +4,6 @@ Plotly.d3.csv("https://raw.githubusercontent.com/jameschou365/LottoApp/master/da
         return rows.map(function(row) { return row[key]; });
     }
 
-    var trace1 = {
-        type: "bar",
-        name: 'S1',
-        x: unpack(rows, 'DrawDate'),
-        y: unpack(rows, 'S1')
-    }
-
-    var trace2 = {
-        type: "bar",
-        name: 'S2',
-        x: unpack(rows, 'DrawDate'),
-        y: unpack(rows, 'S2')
-    }
-
     var trace3 = {
         type: "bar",
         name: 'S3',
@@ -46,7 +32,7 @@ Plotly.d3.csv("https://raw.githubusercontent.com/jameschou365/LottoApp/master/da
         y: unpack(rows, 'S6')
     }
 
-    var data = [trace1,trace2,trace3,trace4,trace5,trace6];
+    var data = [trace3,trace4,trace5,trace6];
 
     var layout = {
         barmode: 'relative',
