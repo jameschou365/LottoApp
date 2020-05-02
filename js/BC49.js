@@ -1,30 +1,57 @@
-function makeplot() {
-    Plotly.d3.csv("https://raw.githubusercontent.com/jameschou365/LottoApp/master/data/bc49_stars_match_merge.csv", function(data){ processData(data) } );
+Plotly.d3.csv("https://raw.githubusercontent.com/jameschou365/LottoApp/master/data/bc49_stars_match_merge.csv", function(err, rows){
 
-};
-
-function processData(allRows) {
-
-    console.log(allRows);
-    var x = [], y = [], standard_deviation = [];
-
-    for (var i=0; i<allRows.length; i++) {
-        row = allRows[i];
-        x.push( row['DrawDate'] );
-        y.push( row['S6'] );
+    function unpack(rows, key) {
+        return rows.map(function(row) { return row[key]; });
     }
-    console.log( 'X',x, 'Y',y, 'SD',standard_deviation );
-    makePlotly( x, y, standard_deviation );
-}
 
-function makePlotly( x, y, standard_deviation ){
-    var plotDiv = document.getElementById("plot");
-    var traces = [{
-        x: x,
-        y: y
-    }];
+    var trace1 = {
+        type: "bar",
+        name: 'S1',
+        x: unpack(rows, 'DrawDate'),
+        y: unpack(rows, 'S1')
+    }
 
-    Plotly.newPlot('myDiv', traces,
-        {title: 'BC49 Wining Number Drawing Times'});
-};
-makeplot();
+    var trace2 = {
+        type: "bar",
+        name: 'S2',
+        x: unpack(rows, 'DrawDate'),
+        y: unpack(rows, 'S2')
+    }
+
+    var trace3 = {
+        type: "bar",
+        name: 'S3',
+        x: unpack(rows, 'DrawDate'),
+        y: unpack(rows, 'S3')
+    }
+
+    var trace4 = {
+        type: "bar",
+        name: 'S4',
+        x: unpack(rows, 'DrawDate'),
+        y: unpack(rows, 'S4')
+    }
+
+    var trace5 = {
+        type: "bar",
+        name: 'S5',
+        x: unpack(rows, 'DrawDate'),
+        y: unpack(rows, 'S5')
+    }
+
+    var trace6 = {
+        type: "bar",
+        name: 'S6',
+        x: unpack(rows, 'DrawDate'),
+        y: unpack(rows, 'S6')
+    }
+
+    var data = [trace1,trace2,trace3,trace4,trace5,trace6];
+
+    var layout = {
+        barmode: 'relative',
+        title: 'BC49 Wining Number Drawing Times'
+    };
+
+    Plotly.newPlot('myDiv', data, layout);
+})
